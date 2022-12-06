@@ -15,7 +15,7 @@
         <form id="requestNewItemForm" method="post" name="form1" onsubmit="return false">
             <div class="form-group">
                 <label for="input-userId" class="form-control-label" hidden>User Id</label>
-                <input type="text" id="input-userId" class="form-control form-control-alternative" value="@id2" hidden />
+                <input type="text" id="input-userId" class="form-control form-control-alternative" value="@id2" />
             </div>
 
             
@@ -27,7 +27,7 @@
                 <div class="col-lg-6">
                     <div class="form-group focused">
                         <label class="form-control-label" for="input-quantity">Quantity</label>
-                        <input type="number" id="input-quantity" class="form-control form-control-alternative" placeholder="Number of item">
+                        <input type="text" id="input-quantity" class="form-control form-control-alternative" placeholder="Number of item">
                     </div>
                 </div>
             </div>
@@ -43,9 +43,12 @@
             
            
             <div class="form-group">
-             <label class="form-control-label" for="input-start-date">Start - End Date</label>
-            <input type="date" id="input-start-date" name="startdate" class="form-control form-control-alternative">
-            <input type="date" id="input-end-date" name="enddate" class="form-control form-control-alternative" >
+             <label class="form-control-label" for="input-start-date">Start Date</label>
+
+                <input type="datetime-local" id="input-start-date" name="startdate" class="form-control form-control-alternative">
+            <div></div>
+                <label class="form-control-label" for="input-start-date">End Date</label>
+            <input type="datetime-local" id="input-end-date" name="enddate" class="form-control form-control-alternative" >
                 
             </div>
             <div class="form-group focused">

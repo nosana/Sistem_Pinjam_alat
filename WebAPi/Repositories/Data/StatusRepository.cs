@@ -20,7 +20,7 @@ namespace WebAPi.Repositories.Data
             var request = new RequestItem
             {
                 Id = requestItem.Id,
-                AccountId = requestItem.UserId,
+                AccountId = requestItem.AccountId,
                 ItemId = requestItem.ItemId,
                 StartDate = requestItem.StartDate,
                 EndDate = requestItem.EndDate,

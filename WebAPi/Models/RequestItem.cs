@@ -33,13 +33,13 @@ namespace WebAPi.Models
         public string Notes { get; set; }
 
         [JsonIgnore]
-        public virtual Account Accounts{ get; set; }
+        public virtual Account? Accounts{ get; set; }
         [JsonIgnore]
-        public virtual Item Items { get; set; }
+        public virtual Item? Items { get; set; }
         [JsonIgnore]
-        public virtual ReturnItem ReturnItems { get; set; }
+        public virtual ReturnItem? ReturnItems { get; set; }
         [JsonIgnore]
-        public virtual Status Statuses { get; set; }
+        public virtual Status? Statuses { get; set; }
 
     }
 }

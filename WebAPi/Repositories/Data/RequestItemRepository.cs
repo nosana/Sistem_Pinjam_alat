@@ -14,7 +14,7 @@ namespace WebAPi.Repositories.Data
             this.myContext = myContext;
         }
         [HttpPost]
-        public int RequestItem(RequestItemVM requestItem)
+        public int RequestItem(RequestItem requestItem)
         {
             var checkItem = myContext.Items.Where(i => i.Id == requestItem.ItemId).SingleOrDefault();
             if (requestItem.Quantity > checkItem.Quantity)
@@ -25,7 +25,7 @@ namespace WebAPi.Repositories.Data
             {
                 var request = new RequestItem
                 {
-                    AccountId = requestItem.UserId,
+                    AccountId = requestItem.AccountId,
                     ItemId = requestItem.ItemId,
                     StartDate = requestItem.StartDate,
                     EndDate = requestItem.EndDate,

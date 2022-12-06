@@ -32,27 +32,56 @@
 function NewRequestItem() {
     let data;
     let id = 0;
-    let userid = $('#input-userId')
+    let accountId = $('#input-userId').val();
     let item = $(`#input-item`).val();
     let qty = $('#input-quantity').val();
     let startDate = $(`#input-start-date`).val();
     let endDate = $(`#input-end-date`).val();
     let notes = $(`#input-notes`).val();
+    let status = 3;
 
 
     data = {
         "id": id,
-        "accountId": userid,
+        "accountId": accountId,
         "itemid": item,
         "quantity": qty,
         "startDate": startDate,
         "endDate": endDate,
         "notes": notes,
-        "statusId": 2,
+        "statusId": status,
     };
     console.log(data);
-
     Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'yes, save',
+        denyButtonText: `Don't save`,
+    }).then((result) => {
+        console.log(result)
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:7095/api/RequestItem/NewRequest`,
+                data: JSON.stringify(data),
+                dataType: 'json',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                success: function () {
+                    Swal.fire('Saved!', '', 'success').then(function () {
+                        location.reload();
+                    })
+                },
+                error: function (xhr, ajaxOption, theownError) {
+                    Swal.fire('error delete');
+                }
+            });
+        }
+    });
+}
+   /* Swal.fire({
         title: 'Do you want to save the changes?',
         showDenyButton: true,
         showCancelButton: true,
@@ -92,7 +121,7 @@ function NewRequestItem() {
             });
         }
     })
-}
+}*/
         
         
 

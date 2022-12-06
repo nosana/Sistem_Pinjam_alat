@@ -22,7 +22,7 @@ namespace WebAPi.Controllers
            this.myContext = myContext;  
         }
         [HttpPost(("NewRequest"))]
-        public ActionResult RequestItem(RequestItemVM requestItem)
+        public ActionResult RequestItem(RequestItem requestItem)
         {
             try
             {
