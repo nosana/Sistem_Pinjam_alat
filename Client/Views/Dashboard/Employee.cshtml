@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = "EmployeeLayout";
+    ViewData["Title"] = "Employee";
+    var id = ViewData["token"];
+    var id2 = ViewData["id"];
+}
+
+<div class="card card-primary card-outline">
+    <div class="card-header">
+        <h1>Employee</h1>
+    </div>
+    <div class="card-body">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create New Data
+        </button>
+        <table class="table table-striped" id="tableDataReqItem">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Quantity</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@*<div class="modal fade" id="requestNewItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalNewRequest">Request New Item</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="requestNewItemForm" method="post" name="form1" onsubmit="return false">
+                    <div class="form-group">
+                        <label for="input-userId" class="form-control-label" hidden>User Id</label>
+                        <input type="text" id="input-userId" class="form-control form-control-alternative" value="@id2" hidden />
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group focused item-available">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group focused">
+                                <label class="form-control-label" for="input-quantity">Quantity</label>
+                                <input type="number" id="input-quantity" class="form-control form-control-alternative" placeholder="Number of item">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-start-date">Start - End Date</label>
+                        <input type="text" id="daterange" name="daterange" class="form-control form-control-alternative">
+                    </div>
+                    <input type="text" id="input-start-date" name="startdate" class="form-control form-control-alternative" hidden>
+                    <input type="text" id="input-end-date" name="enddate" class="form-control form-control-alternative" hidden>
+                    <div class="form-group focused">
+                        <label>Notes</label>
+                        <textarea rows="4" class="form-control form-control-alternative" id="input-notes" placeholder="Type in your purpose for borrowing this item... "></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <a href="#" class="btn btn-primary" onclick="RequestNewItem()">Submit</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>*@

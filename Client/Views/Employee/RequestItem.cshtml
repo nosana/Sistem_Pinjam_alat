@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = "EmployeeLayout";
+    ViewData["Title"] = "RequestItem";
+    var id = ViewData["token"];
+    var id2 = ViewData["id"];
+}
+
+<div class="card card-primary card-outline" id="req">
+    <div class="card-header">
+        <h1>Request Item</h1>
+    </div>
+    <div class="card-body">
+
+        <form id="requestNewItemForm" method="post" name="form1" onsubmit="return false">
+            <div class="form-group">
+                <label for="input-userId" class="form-control-label" hidden>User Id</label>
+                <input type="text" id="input-userId" class="form-control form-control-alternative" value="@id2" hidden />
+            </div>
+
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group focused item-available">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group focused">
+                        <label class="form-control-label" for="input-quantity">Quantity</label>
+                        <input type="number" id="input-quantity" class="form-control form-control-alternative" placeholder="Number of item">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-control-label" for="items"> Item</label>
+                <input type="text" id="input-item" name="item" class="form-control form-control-alternative">
+            </div>
+            
+            
+            
+            
+            
+           
+            <div class="form-group">
+             <label class="form-control-label" for="input-start-date">Start - End Date</label>
+            <input type="date" id="input-start-date" name="startdate" class="form-control form-control-alternative">
+            <input type="date" id="input-end-date" name="enddate" class="form-control form-control-alternative" >
+                
+            </div>
+            <div class="form-group focused">
+                <label>Notes</label>
+                <textarea rows="4" class="form-control form-control-alternative" id="input-notes" placeholder="Type in your purpose for borrowing this item... "></textarea>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <a href="#" class="btn btn-primary" onclick="NewRequestItem()">Submit</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
